@@ -1,6 +1,6 @@
 import express from 'express';
-import { prisma } from './db.js';
 import authRouter from './routes/auth.js';
+import finanzasRouter from './routes/finanzas.js';
 
 const app = express();
 const PORT = 3000;
@@ -11,12 +11,8 @@ app.get('/', (req, res) => {
   res.send('¡Backend funcionando!');
 });
 
-app.get('/usuarios', async (req, res) => {
-  const usuarios = await prisma.user.findMany();
-  res.json(usuarios);
-});
-
 app.use('/auth', authRouter);
+app.use('/finanzas', finanzasRouter);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
