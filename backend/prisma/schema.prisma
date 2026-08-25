@@ -18,6 +18,7 @@ model User {
   passwordHash String
   createdAt    DateTime      @default(now())
   transactions Transaction[]
+  credentials Credential[]
 }
 
 enum TransactionType {
@@ -58,5 +59,19 @@ model Transaction {
   createdAt   DateTime        @default(now())
   user        User            @relation(fields: [userId], references: [id])
   userId      Int
+}
+
+model Credential {
+  id                Int      @id @default(autoincrement())
+  siteName          String
+  siteUrl           String?
+  username          String
+  encryptedPassword String
+  iv                String
+  authTag           String
+  notes             String?
+  createdAt         DateTime @default(now())
+  user              User     @relation(fields: [userId], references: [id])
+  userId            Int
 }
 
