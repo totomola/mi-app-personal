@@ -2,10 +2,12 @@ import express from 'express';
 import authRouter from './routes/auth.js';
 import finanzasRouter from './routes/finanzas.js';
 import credencialesRouter from './routes/credenciales.js';
+import cors from 'cors';
 
 const app = express();
 const PORT = 3000;
 
+app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
