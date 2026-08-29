@@ -27,13 +27,12 @@ enum TransactionType {
 }
 
 enum Category {
+  // Gastos
   COMIDA
   COMBUSTIBLE
   ALQUILER
-  SUELDO
   SUPERMERCADO
   OCIO
-  EXTRAS
   GASTOS_SEGUNDO
   PSICOLOGA
   MUTUAL
@@ -41,6 +40,16 @@ enum Category {
   OTRO
   VACACIONES
   CARRERAS
+
+  // Ingresos
+  SUELDO_NETO
+  BONO_CATEGORIA
+  COMISION_VENTAS
+  PREMIOS
+  GUARDIAS
+  INGRESO_EXTRA
+  EMPRENDIMIENTO
+  OTRO_INGRESO
 }
 
 enum Currency {
