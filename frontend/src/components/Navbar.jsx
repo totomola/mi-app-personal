@@ -17,6 +17,9 @@ function Navbar() {
         <Link to="/finanzas" className="text-white font-semibold hover:text-blue-400">
           Finanzas
         </Link>
+        <Link to="/credenciales" className="text-white font-semibold hover:text-blue-400">
+          Contraseñas
+        </Link>
       </div>
       <button
         onClick={handleLogout}

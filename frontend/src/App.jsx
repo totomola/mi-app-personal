@@ -2,8 +2,10 @@ import { Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import FinanzasPage from './pages/FinanzasPage';
+import CredencialesPage from './pages/CredencialesPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/Layout';
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
       >
         <Route path="/" element={<DashboardPage />} />
         <Route path="/finanzas" element={<FinanzasPage />} />
+        <Route path="/credenciales" element={<CredencialesPage />} />
       </Route>
     </Routes>
   );
