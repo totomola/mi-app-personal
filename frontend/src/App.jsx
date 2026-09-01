@@ -5,7 +5,7 @@ import FinanzasPage from './pages/FinanzasPage';
 import CredencialesPage from './pages/CredencialesPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/Layout';
-
+import PinGate from './components/PinGate';
 
 function App() {
   return (
@@ -20,7 +20,14 @@ function App() {
       >
         <Route path="/" element={<DashboardPage />} />
         <Route path="/finanzas" element={<FinanzasPage />} />
-        <Route path="/credenciales" element={<CredencialesPage />} />
+        <Route
+  path="/credenciales"
+  element={
+    <PinGate>
+      <CredencialesPage />
+    </PinGate>
+  }
+/>
       </Route>
     </Routes>
   );
